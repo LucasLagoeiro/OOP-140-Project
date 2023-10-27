@@ -127,6 +127,11 @@ public class Cadastrar extends javax.swing.JFrame {
 
         jLabel9.setText("/");
 
+        txtClienteAnoNasc.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtClienteAnoNascFocusLost(evt);
+            }
+        });
         txtClienteAnoNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtClienteAnoNascActionPerformed(evt);
@@ -139,6 +144,11 @@ public class Cadastrar extends javax.swing.JFrame {
 
         txtClienteIdade.setEditable(false);
         txtClienteIdade.setBackground(new java.awt.Color(153, 153, 153));
+        txtClienteIdade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtClienteIdadeFocusLost(evt);
+            }
+        });
         txtClienteIdade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtClienteIdadeActionPerformed(evt);
@@ -457,8 +467,8 @@ public class Cadastrar extends javax.swing.JFrame {
                              Integer.parseInt(txtMesPedido.getText()), 
                              Integer.parseInt(txtAnoPedido.getText())
                     ));
-        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtClienteAnoNasc.getText()));
-        txtClienteIdade.setText(String.valueOf(idade));
+        p.imprime();
+        
         
         
     }//GEN-LAST:event_buttonCadastrarPedidoActionPerformed
@@ -497,6 +507,16 @@ public class Cadastrar extends javax.swing.JFrame {
         new CadastrarProduto().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtClienteIdadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtClienteIdadeFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtClienteIdadeFocusLost
+
+    private void txtClienteAnoNascFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtClienteAnoNascFocusLost
+        // TODO add your handling code here:
+        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtClienteAnoNasc.getText()));
+        txtClienteIdade.setText(String.valueOf(idade));
+    }//GEN-LAST:event_txtClienteAnoNascFocusLost
 
     /**
      * @param args the command line arguments

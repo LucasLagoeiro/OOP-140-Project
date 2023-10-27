@@ -34,9 +34,9 @@ public class MateriaPrima  implements Imprimivel{
  //chama Interface   
    @Override
     public void imprime() {
-        System.out.println("Matéria-Prima: " + nome);
-        System.out.println("Unidade: " + unidade);
-        System.out.println("Fornecedor: " + fornecedor);
-        System.out.println("Preço: " + preco);
+        System.out.println("Matéria-Prima: " + this.nome);
+        System.out.println("Unidade: " + this.unidade);
+        System.out.println("Fornecedor: " + this.fornecedor);
+        System.out.println("Preço: " + this.preco);
     }
 }

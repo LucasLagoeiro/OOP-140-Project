@@ -384,10 +384,13 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         ), 
                         Integer.parseInt(txtIngredienteQuant.getText())
                         );
+        p.imprime();
     }//GEN-LAST:event_bttIngredCadActionPerformed
 
     private void bttManufaturaCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttManufaturaCadastrarActionPerformed
         // TODO add your handling code here:
+        Processo p = new Processo();
+        p.setNome(txtManufaturaProcesso.getText());
         /* Manufatura m = new Manufatura(
                         new Processo(
                                 nome, 
@@ -396,6 +399,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
                                 equipamento
                        ), 
                        TOP_ALIGNMENT);*/
+        p.imprime();
         
     }//GEN-LAST:event_bttManufaturaCadastrarActionPerformed
 

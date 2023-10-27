@@ -269,6 +269,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtClienteAnoNasc">
           <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtClienteAnoNascFocusLost"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtClienteAnoNascActionPerformed"/>
           </Events>
         </Component>
@@ -290,6 +291,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtClienteIdadeFocusLost"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtClienteIdadeActionPerformed"/>
           </Events>
         </Component>

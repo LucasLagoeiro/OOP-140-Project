@@ -3,12 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontend;
-import backend.Pedido;
-import backend.Pessoa;
+import backend.Equipamento;
 import backend.Data;
-import backend.Endereco;
-import java.time.LocalDate;
-
 
 
 
@@ -175,6 +171,14 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Equipamento e = new Equipamento(txtNome.getText(),
+                txtFabricante.getText(),
+                new Data(Integer.parseInt(txtClienteDiaNasc1.getText()),
+                         Integer.parseInt(txtClienteMesNasc1.getText()),
+                         Integer.parseInt(txtClienteAnoNasc1.getText())),
+                         Float.parseFloat(txtDepreciacao.getText())
+        );
+        e.imprime();
         new CadastrarProduto().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed

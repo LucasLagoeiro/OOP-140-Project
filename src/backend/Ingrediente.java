@@ -22,6 +22,6 @@ public class Ingrediente implements Imprimivel {
    @Override
     public void imprime() {
         System.out.println("Ingrediente: " + materiaPrima.getNome());
-        System.out.println("Quantidade: " + qtde);
+        System.out.println("Quantidade: " + this.qtde);
     }
 }

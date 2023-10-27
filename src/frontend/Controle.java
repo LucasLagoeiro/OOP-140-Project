@@ -3,17 +3,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontend;
+import java.util.ArrayList;
+import backend.Produto;
+
 
 /**
  *
  * @author uniellagoeiro
  */
 public class Controle extends javax.swing.JFrame {
+    
+    ArrayList<Produto> lista;
 
     /**
      * Creates new form Controle
      */
     public Controle() {
+        initComponents();
+    }
+    
+    public Controle(ArrayList<Produto> lista){
+        this.lista=lista;
         initComponents();
     }
 
@@ -36,7 +46,7 @@ public class Controle extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Controle");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -116,6 +126,9 @@ public class Controle extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(this.lista == null){
+            this.lista = new ArrayList<>();
+        }
         new Cadastrar().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
