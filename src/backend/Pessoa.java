@@ -4,6 +4,7 @@ package backend;
 public class Pessoa implements Imprimivel {
     private String nome;
     private Data dataNasc;
+    private String idade;
     private String cpf;
     private Endereco endereco;
     //construtores
@@ -13,6 +14,12 @@ public class Pessoa implements Imprimivel {
         this.cpf = cpf;
         this.endereco = endereco;
     }
+    //sets
+
+    public void setIdade(String idade) {
+        this.idade = idade;
+    }
+    
     //gets
     public String getNome() {
         return nome;
@@ -33,9 +40,10 @@ public class Pessoa implements Imprimivel {
     //chama Interface
     @Override
     public void imprime() {
-        System.out.println("Nome: " + nome);
+        System.out.println("Nome: " + this.nome);
         System.out.println("Data de Nascimento: " + dataNasc.getDia() + "/" + dataNasc.getMes() + "/" + dataNasc.getAno());
-        System.out.println("CPF: " + cpf);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("CPF: " + this.cpf);
         endereco.imprime();
     }
 }

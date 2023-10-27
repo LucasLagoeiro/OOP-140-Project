@@ -3,10 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package frontend;
-import backend.Pedido;
-import backend.Pessoa;
 import backend.Data;
 import backend.Endereco;
+import backend.Operador;
 import java.time.LocalDate;
 
 
@@ -32,21 +31,21 @@ public class CadastrarOperador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNumero = new javax.swing.JTextField();
+        txtCargo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        txtClienteNome = new javax.swing.JTextField();
+        txtOpNome = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtClienteDiaNasc = new javax.swing.JTextField();
+        txtOpDiaNasc = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtClienteMesNasc = new javax.swing.JTextField();
+        txtOpMesNasc = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtClienteAnoNasc = new javax.swing.JTextField();
+        txtOpAnoNasc = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        txtClienteIdade = new javax.swing.JTextField();
-        txtClienteCPF = new javax.swing.JTextField();
+        txtOpIdade = new javax.swing.JTextField();
+        txtOpCPF = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -62,15 +61,15 @@ public class CadastrarOperador extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        txtNumero1 = new javax.swing.JTextField();
+        txtSalarioPorHora = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Operador");
         setResizable(false);
 
-        txtNumero.addActionListener(new java.awt.event.ActionListener() {
+        txtCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumeroActionPerformed(evt);
+                txtCargoActionPerformed(evt);
             }
         });
 
@@ -80,17 +79,17 @@ public class CadastrarOperador extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtClienteNome.addActionListener(new java.awt.event.ActionListener() {
+        txtOpNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClienteNomeActionPerformed(evt);
+                txtOpNomeActionPerformed(evt);
             }
         });
 
         jLabel7.setText("Data de nasc.:");
 
-        txtClienteDiaNasc.addActionListener(new java.awt.event.ActionListener() {
+        txtOpDiaNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClienteDiaNascActionPerformed(evt);
+                txtOpDiaNascActionPerformed(evt);
             }
         });
 
@@ -98,9 +97,9 @@ public class CadastrarOperador extends javax.swing.JFrame {
 
         jLabel9.setText("/");
 
-        txtClienteAnoNasc.addActionListener(new java.awt.event.ActionListener() {
+        txtOpAnoNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClienteAnoNascActionPerformed(evt);
+                txtOpAnoNascActionPerformed(evt);
             }
         });
 
@@ -108,17 +107,17 @@ public class CadastrarOperador extends javax.swing.JFrame {
 
         jLabel11.setText("Idade:");
 
-        txtClienteIdade.setEditable(false);
-        txtClienteIdade.setBackground(new java.awt.Color(153, 153, 153));
-        txtClienteIdade.addActionListener(new java.awt.event.ActionListener() {
+        txtOpIdade.setEditable(false);
+        txtOpIdade.setBackground(new java.awt.Color(153, 153, 153));
+        txtOpIdade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClienteIdadeActionPerformed(evt);
+                txtOpIdadeActionPerformed(evt);
             }
         });
 
-        txtClienteCPF.addActionListener(new java.awt.event.ActionListener() {
+        txtOpCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtClienteCPFActionPerformed(evt);
+                txtOpCPFActionPerformed(evt);
             }
         });
 
@@ -134,27 +133,27 @@ public class CadastrarOperador extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(18, 18, 18)
-                        .addComponent(txtClienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtOpNome, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtClienteDiaNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtOpDiaNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtClienteMesNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtOpMesNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtClienteAnoNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtOpAnoNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtClienteIdade))
+                        .addComponent(txtOpIdade))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtOpCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -162,21 +161,21 @@ public class CadastrarOperador extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtClienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtOpNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtClienteDiaNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtOpDiaNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(txtClienteMesNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtOpMesNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(txtClienteAnoNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtOpAnoNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
-                    .addComponent(txtClienteIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtOpIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtOpCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
@@ -283,9 +282,9 @@ public class CadastrarOperador extends javax.swing.JFrame {
             }
         });
 
-        txtNumero1.addActionListener(new java.awt.event.ActionListener() {
+        txtSalarioPorHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumero1ActionPerformed(evt);
+                txtSalarioPorHoraActionPerformed(evt);
             }
         });
 
@@ -299,11 +298,11 @@ public class CadastrarOperador extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSalarioPorHora, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -322,10 +321,10 @@ public class CadastrarOperador extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(txtNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSalarioPorHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -343,14 +342,14 @@ public class CadastrarOperador extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
+    private void txtCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_txtNumeroActionPerformed
+    }//GEN-LAST:event_txtCargoActionPerformed
 
-    private void txtClienteCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteCPFActionPerformed
+    private void txtOpCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpCPFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtClienteCPFActionPerformed
+    }//GEN-LAST:event_txtOpCPFActionPerformed
 
     private void txtEnderecoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoNumeroActionPerformed
         // TODO add your handling code here:
@@ -368,31 +367,54 @@ public class CadastrarOperador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoRuaActionPerformed
 
-    private void txtClienteDiaNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteDiaNascActionPerformed
+    private void txtOpDiaNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpDiaNascActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtClienteDiaNascActionPerformed
+    }//GEN-LAST:event_txtOpDiaNascActionPerformed
 
-    private void txtClienteAnoNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteAnoNascActionPerformed
+    private void txtOpAnoNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpAnoNascActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtClienteAnoNascActionPerformed
+        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
+        txtOpIdade.setText(String.valueOf(idade));
+    }//GEN-LAST:event_txtOpAnoNascActionPerformed
 
-    private void txtClienteNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteNomeActionPerformed
+    private void txtOpNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtClienteNomeActionPerformed
+    }//GEN-LAST:event_txtOpNomeActionPerformed
 
-    private void txtClienteIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteIdadeActionPerformed
+    private void txtOpIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpIdadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtClienteIdadeActionPerformed
+    }//GEN-LAST:event_txtOpIdadeActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Operador o = new Operador(txtOpNome.getText(),
+                new Data(
+                        Integer.parseInt(txtOpDiaNasc.getText()), 
+                        Integer.parseInt(txtOpMesNasc.getText()),
+                        Integer.parseInt(txtOpAnoNasc.getText())
+                ),
+                txtOpCPF.getText(),
+                new Endereco(
+                        txtEnderecoEstado.getText(), 
+                        txtEnderecoCidade.getText(),
+                        txtEnderecoBairro.getText(), 
+                        txtEnderecoRua.getText(), 
+                        Integer.parseInt(txtEnderecoNumero.getText())
+                ),
+                txtCargo.getText(),
+                Float.parseFloat(txtSalarioPorHora.getText())
+        ); 
         new CadastrarProduto().setVisible(true);
         this.dispose();
+        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
+        txtOpIdade.setText(String.valueOf(idade));
+        o.setIdade(String.valueOf(idade));
+        o.imprime();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void txtNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero1ActionPerformed
+    private void txtSalarioPorHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalarioPorHoraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumero1ActionPerformed
+    }//GEN-LAST:event_txtSalarioPorHoraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,18 +471,18 @@ public class CadastrarOperador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtClienteAnoNasc;
-    private javax.swing.JTextField txtClienteCPF;
-    private javax.swing.JTextField txtClienteDiaNasc;
-    private javax.swing.JTextField txtClienteIdade;
-    private javax.swing.JTextField txtClienteMesNasc;
-    private javax.swing.JTextField txtClienteNome;
+    private javax.swing.JTextField txtCargo;
     private javax.swing.JTextField txtEnderecoBairro;
     private javax.swing.JTextField txtEnderecoCidade;
     private javax.swing.JTextField txtEnderecoEstado;
     private javax.swing.JTextField txtEnderecoNumero;
     private javax.swing.JTextField txtEnderecoRua;
-    private javax.swing.JTextField txtNumero;
-    private javax.swing.JTextField txtNumero1;
+    private javax.swing.JTextField txtOpAnoNasc;
+    private javax.swing.JTextField txtOpCPF;
+    private javax.swing.JTextField txtOpDiaNasc;
+    private javax.swing.JTextField txtOpIdade;
+    private javax.swing.JTextField txtOpMesNasc;
+    private javax.swing.JTextField txtOpNome;
+    private javax.swing.JTextField txtSalarioPorHora;
     // End of variables declaration//GEN-END:variables
 }

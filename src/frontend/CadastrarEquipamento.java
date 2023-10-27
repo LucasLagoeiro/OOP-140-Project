@@ -32,11 +32,11 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNumero = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        txtNumero1 = new javax.swing.JTextField();
+        txtFabricante = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         txtClienteDiaNasc1 = new javax.swing.JTextField();
         txtClienteMesNasc1 = new javax.swing.JTextField();
@@ -44,15 +44,15 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtNumero2 = new javax.swing.JTextField();
+        txtDepreciacao = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Equipamento");
         setResizable(false);
 
-        txtNumero.addActionListener(new java.awt.event.ActionListener() {
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumeroActionPerformed(evt);
+                txtNomeActionPerformed(evt);
             }
         });
 
@@ -67,9 +67,9 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
             }
         });
 
-        txtNumero1.addActionListener(new java.awt.event.ActionListener() {
+        txtFabricante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumero1ActionPerformed(evt);
+                txtFabricanteActionPerformed(evt);
             }
         });
 
@@ -93,9 +93,9 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
 
         jLabel3.setText("Depreciação");
 
-        txtNumero2.addActionListener(new java.awt.event.ActionListener() {
+        txtDepreciacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumero2ActionPerformed(evt);
+                txtDepreciacaoActionPerformed(evt);
             }
         });
 
@@ -113,7 +113,7 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtDepreciacao, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel14)
@@ -131,11 +131,11 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59))))
         );
         layout.setVerticalGroup(
@@ -143,10 +143,10 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
-                    .addComponent(txtNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtClienteDiaNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,7 +157,7 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
                     .addComponent(txtClienteAnoNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDepreciacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(38, 38, 38)
                 .addComponent(jButton2)
@@ -168,10 +168,10 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_txtNumeroActionPerformed
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -179,9 +179,9 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void txtNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero1ActionPerformed
+    private void txtFabricanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFabricanteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumero1ActionPerformed
+    }//GEN-LAST:event_txtFabricanteActionPerformed
 
     private void txtClienteDiaNasc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteDiaNasc1ActionPerformed
         // TODO add your handling code here:
@@ -191,9 +191,9 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteAnoNasc1ActionPerformed
 
-    private void txtNumero2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero2ActionPerformed
+    private void txtDepreciacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDepreciacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumero2ActionPerformed
+    }//GEN-LAST:event_txtDepreciacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,8 +244,8 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
     private javax.swing.JTextField txtClienteAnoNasc1;
     private javax.swing.JTextField txtClienteDiaNasc1;
     private javax.swing.JTextField txtClienteMesNasc1;
-    private javax.swing.JTextField txtNumero;
-    private javax.swing.JTextField txtNumero1;
-    private javax.swing.JTextField txtNumero2;
+    private javax.swing.JTextField txtDepreciacao;
+    private javax.swing.JTextField txtFabricante;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }

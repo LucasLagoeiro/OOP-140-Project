@@ -73,6 +73,11 @@ public class CadastrarProduto extends javax.swing.JFrame {
 
         txtCusto.setEditable(false);
         txtCusto.setBackground(new java.awt.Color(153, 153, 153));
+        txtCusto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCustoActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Ingrediente"));
 
@@ -405,6 +410,10 @@ public class CadastrarProduto extends javax.swing.JFrame {
         new CadastrarEquipamento().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_bttEquipActionPerformed
+
+    private void txtCustoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCustoActionPerformed
 
     /**
      * @param args the command line arguments
