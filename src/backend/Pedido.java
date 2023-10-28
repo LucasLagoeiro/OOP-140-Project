@@ -9,6 +9,14 @@ public class Pedido implements Imprimivel {
     private ArrayList<Produto> produtos;
     
 //construtores
+    
+    public Pedido(int numero, Pessoa cliente, Data data, ArrayList<Produto> produtos) {
+        this.numero = numero;
+        this.cliente = cliente;
+        this.data = data;
+        this.produtos = produtos;
+    }
+
     public Pedido(int numero, Pessoa cliente, Data data) {
         this.numero = numero;
         this.cliente = cliente;

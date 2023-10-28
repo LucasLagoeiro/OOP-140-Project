@@ -4,7 +4,7 @@
  */
 package frontend;
 import java.util.ArrayList;
-import backend.Produto;
+import backend.Pedido;
 
 
 /**
@@ -13,7 +13,7 @@ import backend.Produto;
  */
 public class Controle extends javax.swing.JFrame {
     
-    ArrayList<Produto> lista;
+    ArrayList<Pedido> lista;
 
     /**
      * Creates new form Controle
@@ -22,7 +22,7 @@ public class Controle extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Controle(ArrayList<Produto> lista){
+    public Controle(ArrayList<Pedido> lista){
         this.lista=lista;
         initComponents();
     }
@@ -62,6 +62,11 @@ public class Controle extends javax.swing.JFrame {
         jButton3.setText("Lista");
 
         jButton4.setText("Sobre");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -129,9 +134,16 @@ public class Controle extends javax.swing.JFrame {
         if(this.lista == null){
             this.lista = new ArrayList<>();
         }
-        new Cadastrar().setVisible(true);
+        new Cadastrar(this.lista).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        for (Pedido pedido : lista) {
+            pedido.imprime();
+}
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

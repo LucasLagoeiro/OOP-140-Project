@@ -7,7 +7,10 @@ import backend.Pedido;
 import backend.Pessoa;
 import backend.Data;
 import backend.Endereco;
+import backend.Produto;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 
 
@@ -17,9 +20,16 @@ import java.time.LocalDate;
  * @author uniellagoeiro
  */
 public class Cadastrar extends javax.swing.JFrame {
+    
+    ArrayList<Pedido> lista;
 
 
     public Cadastrar() {
+        initComponents();
+    }
+    
+    public Cadastrar(ArrayList<Pedido> lista){
+        this.lista = lista;
         initComponents();
     }
 
@@ -466,8 +476,29 @@ public class Cadastrar extends javax.swing.JFrame {
                              Integer.parseInt(txtDiaPedido.getText()), 
                              Integer.parseInt(txtMesPedido.getText()), 
                              Integer.parseInt(txtAnoPedido.getText())
-                    ));
-        p.imprime();
+                    ),
+                    new ArrayList<>());
+        //p.imprime();
+        this.lista.add(p);
+        
+        // clearing all box
+        
+        txtAnoPedido.setText("");
+        txtClienteAnoNasc.setText("");
+        txtClienteCPF.setText("");
+        txtClienteDiaNasc.setText("");
+        txtClienteIdade.setText("");
+        txtClienteMesNasc.setText("");
+        txtClienteNome.setText("");
+        txtDiaPedido.setText("");
+        txtEnderecoBairro.setText("");
+        txtEnderecoCidade.setText("");
+        txtEnderecoEstado.setText("");
+        txtEnderecoNumero.setText("");
+        txtEnderecoRua.setText("");
+        txtMesPedido.setText("");
+        txtNumero.setText("");
+        txtTotalPedido.setText("");
         
         
         
@@ -486,7 +517,7 @@ public class Cadastrar extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteAnoNascActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Controle().setVisible(true);
+        new Controle(this.lista).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
