@@ -422,7 +422,10 @@ public class CadastrarProduto extends javax.swing.JFrame {
 
     private void bttManufaturaCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttManufaturaCadastrarActionPerformed
         // TODO add your handling code here:
-        Processo p = new Processo(new Operador(), new Equipamento());
+        
+        //Instanciando os objetos
+        Processo p = new Processo(listaOp.get(listaOp.size() - 1), listaEquip.get(listaEquip.size() - 1));
+        
         p.setNome(txtManufaturaProcesso.getText());
         /* Manufatura m = new Manufatura(
                         new Processo(
