@@ -7,12 +7,23 @@ public class Equipamento implements Imprimivel {
     private Data dataFabricacao;
     private float depreciacaohora;
     //construtores
+
+    public Equipamento() {
+    }
+    
+    
     public Equipamento(String nome, String fabricante, Data dataFabricacao, float depreciacaohora) {
         this.nome = nome;
         this.fabricante = fabricante;
         this.dataFabricacao = dataFabricacao;
         this.depreciacaohora = depreciacaohora;
     }
+    //sets
+
+    public void setDepreciacaohora(float depreciacaohora) {
+        this.depreciacaohora = depreciacaohora;
+    }
+    
     //gets
     public String getNome() {
         return nome;

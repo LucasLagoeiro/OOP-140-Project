@@ -10,6 +10,8 @@ import backend.Manufatura;
 import backend.Processo;
 import backend.Operador;
 import backend.Equipamento;
+import java.util.ArrayList;
+
 
 
 
@@ -19,12 +21,25 @@ import backend.Equipamento;
  */
 public class CadastrarProduto extends javax.swing.JFrame {
 
+    ArrayList<Operador> listaOp;
+    ArrayList<Processo> listaProcess;
+    ArrayList<Manufatura> listaManu;
+    ArrayList<Equipamento> listaEquip;
+
     /**
      * Creates new form CadastrarProduto
      */
     public CadastrarProduto() {
         initComponents();
     }
+    
+    public CadastrarProduto(ArrayList<Operador> listaOp, ArrayList<Equipamento> listaEquip){
+        this.listaOp = listaOp;
+        this.listaEquip = listaEquip;
+        initComponents();
+    }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,6 +75,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
         bttOp = new javax.swing.JButton();
         bttEquip = new javax.swing.JButton();
         bttManufaturaCadastrar = new javax.swing.JButton();
+        bttCalcular = new javax.swing.JButton();
         bttVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -229,29 +245,43 @@ public class CadastrarProduto extends javax.swing.JFrame {
             }
         });
 
+        bttCalcular.setText("Calcular");
+        bttCalcular.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                bttCalcularFocusLost(evt);
+            }
+        });
+        bttCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttCalcularActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtManufaturaProcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtManufaturaCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtManufaturaCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(bttOp)
-                        .addGap(35, 35, 35)
-                        .addComponent(bttEquip)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bttOp, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bttEquip, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bttCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bttManufaturaCadastrar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,11 +292,12 @@ public class CadastrarProduto extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jLabel9)
                     .addComponent(txtManufaturaCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bttOp)
                     .addComponent(bttEquip)
-                    .addComponent(bttManufaturaCadastrar))
+                    .addComponent(bttManufaturaCadastrar)
+                    .addComponent(bttCalcular))
                 .addGap(31, 31, 31))
         );
 
@@ -375,6 +406,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
     private void bttIngredCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttIngredCadActionPerformed
         // TODO add your handling code here:
         Produto p = new Produto(txtNome.getText());
+        
         Ingrediente i = new Ingrediente(
                         new MateriaPrima(
                                 txtIngredienteNome.getText(), 
@@ -384,12 +416,13 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         ), 
                         Integer.parseInt(txtIngredienteQuant.getText())
                         );
+        p.adicionaIngrediente(i);
         p.imprime();
     }//GEN-LAST:event_bttIngredCadActionPerformed
 
     private void bttManufaturaCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttManufaturaCadastrarActionPerformed
         // TODO add your handling code here:
-        Processo p = new Processo();
+        Processo p = new Processo(new Operador(), new Equipamento());
         p.setNome(txtManufaturaProcesso.getText());
         /* Manufatura m = new Manufatura(
                         new Processo(
@@ -399,25 +432,64 @@ public class CadastrarProduto extends javax.swing.JFrame {
                                 equipamento
                        ), 
                        TOP_ALIGNMENT);*/
+        //p.imprime();
+
+        //for (Operador operador : this.listaOp) {
+        //    operador.imprime();
+        //}
+        //for (Equipamento equipamento : this.listaEquip) {
+        //    equipamento.imprime();
+        //}
         p.imprime();
-        
     }//GEN-LAST:event_bttManufaturaCadastrarActionPerformed
 
     private void bttOpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttOpActionPerformed
         // TODO add your handling code here:
-        new CadastrarOperador().setVisible(true);
+        new CadastrarOperador(this.listaOp,this.listaEquip).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_bttOpActionPerformed
 
     private void bttEquipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttEquipActionPerformed
         // TODO add your handling code here:
-        new CadastrarEquipamento().setVisible(true);
+        new CadastrarEquipamento(this.listaOp,this.listaEquip).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_bttEquipActionPerformed
 
     private void txtCustoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCustoActionPerformed
+
+    private void bttCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCalcularActionPerformed
+    
+        //Instanciando os objetos
+        Operador o = new Operador();
+        Equipamento e = new Equipamento();
+        Processo p = new Processo(o, e);
+
+        for (Operador operador : this.listaOp) {
+            operador.imprime();
+        }
+        for (Equipamento equipamento : this.listaEquip) {
+            equipamento.imprime();
+        }
+        
+        System.out.println(listaOp.size());
+        System.out.println(listaEquip.size());
+        
+        //Atualizando os valores
+        o.setSalarioHora(listaOp.get((listaOp.size() - 1)).getSalarioHora());
+        e.setDepreciacaohora(listaEquip.get((listaEquip.size() - 1)).getDepreciacaoHora());
+        
+        System.out.println(o.getSalarioHora());
+        System.out.println(e.getDepreciacaoHora());
+        
+        txtManufaturaCusto.setText(String.valueOf(p.calculaCusto()));
+
+    }//GEN-LAST:event_bttCalcularActionPerformed
+
+    private void bttCalcularFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bttCalcularFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bttCalcularFocusLost
 
     /**
      * @param args the command line arguments
@@ -455,6 +527,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bttCalcular;
     private javax.swing.JButton bttEquip;
     private javax.swing.JButton bttIngredCad;
     private javax.swing.JButton bttManufaturaCadastrar;

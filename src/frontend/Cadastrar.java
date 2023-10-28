@@ -481,7 +481,7 @@ public class Cadastrar extends javax.swing.JFrame {
         //p.imprime();
         this.lista.add(p);
         
-        // clearing all box
+        // clearing all boxes
         
         txtAnoPedido.setText("");
         txtClienteAnoNasc.setText("");

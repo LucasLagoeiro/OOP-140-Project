@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/robo/Desktop/Project-Lagoeiro/OOP-140-Project/src/backend/Processo.java</file>
+            <file>file:/home/robo/Desktop/Project-Lagoeiro/OOP-140-Project/src/frontend/Cadastrar.java</file>
+            <file>file:/home/robo/Desktop/Project-Lagoeiro/OOP-140-Project/src/backend/Operador.java</file>
+            <file>file:/home/robo/Desktop/Project-Lagoeiro/OOP-140-Project/src/frontend/CadastrarOperador.java</file>
+            <file>file:/home/robo/Desktop/Project-Lagoeiro/OOP-140-Project/src/frontend/CadastrarProduto.java</file>
+            <file>file:/home/robo/Desktop/Project-Lagoeiro/OOP-140-Project/src/backend/Pessoa.java</file>
+        </group>
     </open-files>
 </project-private>

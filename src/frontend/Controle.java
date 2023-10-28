@@ -142,7 +142,7 @@ public class Controle extends javax.swing.JFrame {
         // TODO add your handling code here:
         for (Pedido pedido : lista) {
             pedido.imprime();
-}
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

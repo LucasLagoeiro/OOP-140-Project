@@ -5,6 +5,9 @@
 package frontend;
 import backend.Equipamento;
 import backend.Data;
+import backend.Operador;
+import java.util.ArrayList;
+
 
 
 
@@ -14,8 +17,18 @@ import backend.Data;
  */
 public class CadastrarEquipamento extends javax.swing.JFrame {
 
+    //instanciando as duas arrays
+    
+    ArrayList<Operador> listaOp;
+    ArrayList<Equipamento> listaEquip;
 
     public CadastrarEquipamento() {
+        initComponents();
+    }
+    
+    public CadastrarEquipamento(ArrayList<Operador> listaOp,ArrayList<Equipamento> listaEquip){
+        this.listaOp = listaOp;
+        this.listaEquip = listaEquip;
         initComponents();
     }
 
@@ -178,8 +191,20 @@ public class CadastrarEquipamento extends javax.swing.JFrame {
                          Integer.parseInt(txtClienteAnoNasc1.getText())),
                          Float.parseFloat(txtDepreciacao.getText())
         );
-        e.imprime();
-        new CadastrarProduto().setVisible(true);
+        //e.imprime();
+        
+        //Verificação para caso as listas não estiverem inicializadas
+        
+        if(this.listaEquip == null || this.listaOp == null){
+            this.listaEquip = new ArrayList<>();
+            this.listaOp = new ArrayList<>();
+        }
+        
+        //Adicionando os inputs do Equipamento na Array
+        
+        this.listaEquip.add(e);
+        
+        new CadastrarProduto(this.listaOp,this.listaEquip).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

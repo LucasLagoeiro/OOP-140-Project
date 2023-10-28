@@ -5,8 +5,11 @@
 package frontend;
 import backend.Data;
 import backend.Endereco;
+import backend.Equipamento;
 import backend.Operador;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 
 
@@ -17,8 +20,16 @@ import java.time.LocalDate;
  */
 public class CadastrarOperador extends javax.swing.JFrame {
 
-
+    ArrayList<Operador> listaOp;
+    ArrayList<Equipamento> listaEquip;
+    
     public CadastrarOperador() {
+        initComponents();
+    }
+    
+    public CadastrarOperador(ArrayList<Operador> listaOp,ArrayList<Equipamento> listaEquip){
+        this.listaOp = listaOp;
+        this.listaEquip = listaEquip;
         initComponents();
     }
 
@@ -97,6 +108,11 @@ public class CadastrarOperador extends javax.swing.JFrame {
 
         jLabel9.setText("/");
 
+        txtOpAnoNasc.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtOpAnoNascFocusLost(evt);
+            }
+        });
         txtOpAnoNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtOpAnoNascActionPerformed(evt);
@@ -404,17 +420,47 @@ public class CadastrarOperador extends javax.swing.JFrame {
                 txtCargo.getText(),
                 Float.parseFloat(txtSalarioPorHora.getText())
         ); 
-        new CadastrarProduto().setVisible(true);
-        this.dispose();
         int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
-        txtOpIdade.setText(String.valueOf(idade));
         o.setIdade(String.valueOf(idade));
-        o.imprime();
+        //o.imprime();
+        
+        if(this.listaEquip == null || this.listaOp == null){
+            this.listaEquip = new ArrayList<>();
+            this.listaOp = new ArrayList<>();
+        }
+        
+        this.listaOp.add(o);
+        
+        //clearing all boxes
+        
+        txtCargo.setText("");
+        txtEnderecoBairro.setText("");
+        txtEnderecoCidade.setText("");
+        txtEnderecoEstado.setText("");
+        txtEnderecoNumero.setText("");
+        txtEnderecoRua.setText("");
+        txtOpAnoNasc.setText("");
+        txtOpCPF.setText("");
+        txtOpDiaNasc.setText("");
+        txtOpIdade.setText("");
+        txtOpMesNasc.setText("");
+        txtOpNome.setText("");
+        txtSalarioPorHora.setText("");
+        
+        new CadastrarProduto(this.listaOp,this.listaEquip).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtSalarioPorHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalarioPorHoraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSalarioPorHoraActionPerformed
+
+    private void txtOpAnoNascFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtOpAnoNascFocusLost
+        // TODO add your handling code here:
+        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
+        txtOpIdade.setText(String.valueOf(idade));
+
+    }//GEN-LAST:event_txtOpAnoNascFocusLost
 
     /**
      * @param args the command line arguments

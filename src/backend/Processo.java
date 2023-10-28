@@ -11,12 +11,18 @@ public class Processo implements Imprimivel {
     public Processo() {
     }
     
+    public Processo(Operador operador, Equipamento equipamento) {
+        this.operador = operador;
+        this.equipamento = equipamento;
+    }
+    
     public Processo(String nome, float custoHora, Operador operador, Equipamento equipamento) {
         this.nome = nome;
         this.custoHora = custoHora;
         this.operador = operador;
         this.equipamento = equipamento;
     }
+    
 //sets
 
     public void setCustoHora(float custoHora) {
@@ -51,12 +57,18 @@ public class Processo implements Imprimivel {
     public Equipamento getEquipamento() {
         return equipamento;
     }
+    
+//metodos
+    public float calculaCusto(){
+        return (operador.getSalarioHora() + equipamento.getDepreciacaoHora());
+        
+    }
 
 //chama Interface    
  @Override
 public void imprime() {
     System.out.println("Processo: " + nome);
-    System.out.println("Custo por Hora: " + custoHora);
+    System.out.println("Custo por Hora: " + calculaCusto());
     System.out.println("Operador: " + operador.getCargo());
     System.out.println("Equipamento: " + equipamento.getNome());
 }
