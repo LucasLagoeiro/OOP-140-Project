@@ -5,6 +5,7 @@
 package frontend;
 import java.util.ArrayList;
 import backend.Pedido;
+import backend.Produto;
 
 
 /**
@@ -14,6 +15,7 @@ import backend.Pedido;
 public class Controle extends javax.swing.JFrame {
     
     ArrayList<Pedido> lista;
+    ArrayList<Produto> produto;
 
     /**
      * Creates new form Controle
@@ -22,8 +24,9 @@ public class Controle extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Controle(ArrayList<Pedido> lista){
-        this.lista=lista;
+    public Controle(ArrayList<Pedido> lista, ArrayList<Produto> produto){
+        this.lista = lista;
+        this.produto = produto;
         initComponents();
     }
 
@@ -133,8 +136,9 @@ public class Controle extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(this.lista == null){
             this.lista = new ArrayList<>();
+            this.produto = new ArrayList<>();
         }
-        new Cadastrar(this.lista).setVisible(true);
+        new Cadastrar(this.lista,this.produto).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

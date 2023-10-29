@@ -21,15 +21,17 @@ import java.util.ArrayList;
  */
 public class Cadastrar extends javax.swing.JFrame {
     
-    ArrayList<Pedido> lista;
+    ArrayList<Pedido> listaPedido;
+    ArrayList<Produto> listaProdutos;
 
 
     public Cadastrar() {
         initComponents();
     }
     
-    public Cadastrar(ArrayList<Pedido> lista){
-        this.lista = lista;
+    public Cadastrar(ArrayList<Pedido> lista, ArrayList<Produto> listaProdutos){
+        this.listaPedido = lista;
+        this.listaProdutos = listaProdutos;
         initComponents();
     }
 
@@ -477,9 +479,10 @@ public class Cadastrar extends javax.swing.JFrame {
                              Integer.parseInt(txtMesPedido.getText()), 
                              Integer.parseInt(txtAnoPedido.getText())
                     ),
-                    new ArrayList<>());
+                    this.listaProdutos);
         //p.imprime();
-        this.lista.add(p);
+        txtTotalPedido.setText(String.valueOf(p.totalPedido()));
+        this.listaPedido.add(p);
         
         // clearing all boxes
         
@@ -498,7 +501,6 @@ public class Cadastrar extends javax.swing.JFrame {
         txtEnderecoRua.setText("");
         txtMesPedido.setText("");
         txtNumero.setText("");
-        txtTotalPedido.setText("");
         
         
         
@@ -517,7 +519,7 @@ public class Cadastrar extends javax.swing.JFrame {
     }//GEN-LAST:event_txtClienteAnoNascActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Controle(this.lista).setVisible(true);
+        new Controle(this.listaPedido,this.listaProdutos).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -533,12 +535,6 @@ public class Cadastrar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteIdadeActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        new CadastrarProduto().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void txtClienteIdadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtClienteIdadeFocusLost
         // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteIdadeFocusLost
@@ -548,6 +544,12 @@ public class Cadastrar extends javax.swing.JFrame {
         int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtClienteAnoNasc.getText()));
         txtClienteIdade.setText(String.valueOf(idade));
     }//GEN-LAST:event_txtClienteAnoNascFocusLost
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new CadastrarProduto(this.listaPedido,this.listaProdutos).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

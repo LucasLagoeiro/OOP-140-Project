@@ -12,7 +12,7 @@ public class Produto implements Imprimivel {
 
     public Produto() {
     }
-    
+            
     public Produto(ArrayList<Manufatura> manufaturas,ArrayList<Ingrediente> ingrediente) {
         this.manufaturas = manufaturas;
         this.ingredientes = ingrediente;
@@ -40,7 +40,7 @@ public class Produto implements Imprimivel {
     public void adicionaManufatura(Manufatura manufatura) {
         manufaturas.add(manufatura);
     }
-
+    
 public float calculaCusto() {
     float custoTotal = 0;
 
@@ -58,6 +58,25 @@ public float calculaCusto() {
 
     return custo;
 }
+//sets
+
+    public void setCusto(float custo) {
+        this.custo = custo;
+    }
+
+    public void setIngredientes(ArrayList<Ingrediente> ingredientes) {
+        this.ingredientes = ingredientes;
+    }
+
+    public void setManufaturas(ArrayList<Manufatura> manufaturas) {
+        this.manufaturas = manufaturas;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    
 //gets
     public String getNome() {
         return nome;

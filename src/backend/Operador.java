@@ -35,6 +35,8 @@ public class Operador extends Pessoa {
         this.cargo = cargo;
     }
     
+    
+    
 
     //gets
     public String getCargo() {

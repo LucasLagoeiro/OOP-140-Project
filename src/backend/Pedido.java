@@ -63,7 +63,7 @@ public class Pedido implements Imprimivel {
     }
 
     
-
+//metodos
     public float totalPedido() {
         float total = 0;
          // Calcular o custo do produto    

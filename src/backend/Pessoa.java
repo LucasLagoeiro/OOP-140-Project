@@ -8,6 +8,11 @@ public class Pessoa implements Imprimivel {
     private String cpf;
     private Endereco endereco;
     //construtores
+
+    public Pessoa() {
+    }
+    
+    
     public Pessoa(String nome, Data dataNasc, String cpf, Endereco endereco) {
         this.nome = nome;
         this.dataNasc = dataNasc;
