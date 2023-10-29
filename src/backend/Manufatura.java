@@ -9,6 +9,11 @@ public class Manufatura implements Imprimivel {
     public Manufatura() {
     }
     
+    public Manufatura(Processo processo) {
+        this.processo = processo;
+    }
+
+    
     public Manufatura(Processo processo, float qtde) {
         this.processo = processo;
         this.qtde = qtde;
@@ -34,7 +39,11 @@ public class Manufatura implements Imprimivel {
 //chama Interface
     @Override
     public void imprime() {
-        System.out.println("Manufatura: " + processo.getNome());
-        System.out.println("Quantidade: " + qtde);
+        System.out.println("Manufatura");
+        System.out.println("Processo: " + processo.getNome());
+        System.out.println("Custo por hora: " + processo.calculaCusto());
+        System.out.println("Operador: " + processo.getOperador().getCargo());
+        System.out.println("Equipamento: " + processo.getEquipamento().getNome());
+        System.out.println("Horas utilizadas: " + this.qtde);
     }
 }

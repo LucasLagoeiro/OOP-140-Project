@@ -9,6 +9,16 @@ public class Produto implements Imprimivel {
     private float custo;
 
 //construtores
+
+    public Produto() {
+    }
+    
+    public Produto(ArrayList<Manufatura> manufaturas,ArrayList<Ingrediente> ingrediente) {
+        this.manufaturas = manufaturas;
+        this.ingredientes = ingrediente;
+
+    }
+        
     
     public Produto(String nome, ArrayList<Ingrediente> ingredientes, ArrayList<Manufatura> manufaturas) {
         this.nome = nome;
@@ -43,6 +53,8 @@ public float calculaCusto() {
     for (Manufatura manufatura : manufaturas) {
         custoTotal += manufatura.getProcesso().getCustoHora() * manufatura.getQtde();
     }
+    
+    custo = custoTotal;
 
     return custo;
 }
@@ -66,10 +78,14 @@ public float calculaCusto() {
     @Override
     public void imprime() {
         System.out.println("Produto: " + nome);
-        System.out.println("Custo: " + custo);
-        System.out.println("Ingredientes:");
+        System.out.println("Custo: " + calculaCusto());
+        System.out.println("Ingredientes: ");
         for (Ingrediente ingrediente : ingredientes) {
             ingrediente.imprime();
+        }
+        System.out.println("Manufatura: ");
+        for (Manufatura manufatura : manufaturas) {
+            manufatura.imprime();
         }
     }
 }

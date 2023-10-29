@@ -18,10 +18,14 @@ public class Ingrediente implements Imprimivel {
     public float getQtde() {
         return qtde;
     }
+    
 //chama Interface
    @Override
     public void imprime() {
         System.out.println("Ingrediente: " + materiaPrima.getNome());
         System.out.println("Quantidade: " + this.qtde);
+        materiaPrima.imprime();
     }
+    
+    
 }

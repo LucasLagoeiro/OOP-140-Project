@@ -31,6 +31,7 @@ public class MateriaPrima  implements Imprimivel{
     public float getPreco() {
         return preco;
     }
+    
  //chama Interface   
    @Override
     public void imprime() {
