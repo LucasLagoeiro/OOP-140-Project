@@ -76,13 +76,28 @@ public class Pedido implements Imprimivel {
 //chama Interface
     @Override
     public void imprime() {
-        System.out.println("Pedido Número: " + numero);
-        System.out.println("Cliente: " + cliente.getNome());
-        System.out.println("Data: " + data.getDia() + "/" + data.getMes() + "/" + data.getAno());
-        System.out.println("Produtos no Pedido:");
-        for (Produto produto : produtos) {
-            produto.imprime();
-        }
-        System.out.println("Total do Pedido: " + totalPedido());
+        System.out.println("Pedido Número: " + numero + 
+                           " Cliente: " + cliente.getNome() + 
+                           " Data: " + data.getDia() + "/" + data.getMes() + "/" + data.getAno() + 
+                           " Total do Pedido: " + totalPedido());
+        //System.out.println("Cliente: " + cliente.getNome());
+        //System.out.println("Data: " + data.getDia() + "/" + data.getMes() + "/" + data.getAno());
+        //System.out.println("Produtos no Pedido:");
+        //for (Produto produto : produtos) {
+        //    produto.imprime();
+        //}
+        //System.out.println("Total do Pedido: " + totalPedido());
     }
+
+    @Override
+    public String toString() {
+        return "Pedido Número: " + numero + 
+                           " Cliente: " + cliente.getNome() + 
+                           " Data: " + data.getDia() + "/" + data.getMes() + "/" + data.getAno() + 
+                           " Total do Pedido: " + totalPedido() + "\n"; 
+    }
+    
+    
+    
+    
 }

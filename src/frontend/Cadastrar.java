@@ -480,7 +480,7 @@ public class Cadastrar extends javax.swing.JFrame {
                              Integer.parseInt(txtAnoPedido.getText())
                     ),
                     this.listaProdutos);
-        //p.imprime();
+        p.imprime();
         txtTotalPedido.setText(String.valueOf(p.totalPedido()));
         this.listaPedido.add(p);
         

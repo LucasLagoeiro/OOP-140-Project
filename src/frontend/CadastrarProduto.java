@@ -27,11 +27,12 @@ import java.time.LocalDate;
  */
 public class CadastrarProduto extends javax.swing.JFrame {
     
-    ArrayList<Operador> listaOperador;
+    ArrayList<Ingrediente> listaIngrediente;
+    ArrayList<Manufatura> listaManufatura;
     ArrayList<Pedido> listaPedidos;
     ArrayList<Produto> listaProdutos;
     
-   Produto pd = new Produto(new ArrayList<>(),new ArrayList<>());
+   //Produto pd = new Produto(new ArrayList<>(),new ArrayList<>());
 
 
     /**
@@ -134,6 +135,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         txtFabricante = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
+        lblManufaturaCadastroSucess = new javax.swing.JLabel();
         bttVoltar = new javax.swing.JButton();
         bttCadastrarProduto = new javax.swing.JButton();
         bttCadastrarProduto1 = new javax.swing.JButton();
@@ -141,6 +143,11 @@ public class CadastrarProduto extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Produto");
 
+        txtNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNomeFocusGained(evt);
+            }
+        });
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -242,7 +249,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(txtIngredienteCalc)
-                                .addGap(165, 165, 165)
+                                .addGap(180, 180, 180)
                                 .addComponent(lblIngredienteCadastroSucess, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -256,18 +263,19 @@ public class CadastrarProduto extends javax.swing.JFrame {
                                 .addComponent(txtIngredienteUnidade, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bttIngredCad)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(65, 65, 65))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(bttIngredCad)
-                                    .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIngredienteQuant, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                            .addComponent(txtIngredienteCusto)
-                            .addComponent(txtIngredienteFornecedor))))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(65, 65, 65))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtIngredienteQuant, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                    .addComponent(txtIngredienteCusto)
+                                    .addComponent(txtIngredienteFornecedor))))))
                 .addGap(153, 153, 153))
         );
         jPanel2Layout.setVerticalGroup(
@@ -309,6 +317,11 @@ public class CadastrarProduto extends javax.swing.JFrame {
 
         jLabel8.setText("Processo:");
 
+        txtManufaturaProcesso.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtManufaturaProcessoFocusGained(evt);
+            }
+        });
         txtManufaturaProcesso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtManufaturaProcessoActionPerformed(evt);
@@ -742,12 +755,11 @@ public class CadastrarProduto extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtManufaturaHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(bttCalcular)
+                        .addGap(19, 19, 19)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -757,13 +769,18 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtManufaturaCustoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtManufaturaCusto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(183, 183, 183))))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(319, 319, 319)
-                .addComponent(bttCalcular)
-                .addGap(67, 67, 67)
-                .addComponent(bttManufaturaCadastrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(183, 183, 183))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(bttManufaturaCadastrar)
+                                .addGap(38, 38, 38)
+                                .addComponent(lblManufaturaCadastroSucess, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -792,6 +809,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bttCalcular)
+                    .addComponent(lblManufaturaCadastroSucess)
                     .addComponent(bttManufaturaCadastrar))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
@@ -861,9 +879,9 @@ public class CadastrarProduto extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(314, 314, 314)
-                .addComponent(bttVoltar)
-                .addGap(39, 39, 39)
+                .addGap(371, 371, 371)
+                .addComponent(bttVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(bttCadastrarProduto1)
                 .addGap(18, 18, 18)
                 .addComponent(bttCadastrarProduto)
@@ -932,7 +950,18 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         ), 
                         Integer.parseInt(txtIngredienteQuant.getText())
                         );
-        pd.adicionaIngrediente(i);
+        listaIngrediente.add(i);
+        //pd.adicionaIngrediente(i);
+        
+        //clearing all boxes
+        txtIngredienteCusto.setText("");
+        txtIngredienteFornecedor.setText("");
+        txtIngredienteNome.setText("");
+        txtIngredientePreco.setText("");
+        txtIngredienteQuant.setText("");
+        txtIngredienteUnidade.setText("");
+        
+        // Showing in frontend a register sucess msg
         lblIngredienteCadastroSucess.setText("Ingrediente cadastrado!");
         //pd.getIngredientes().get(pd.getIngredientes().size() - 1).imprime();
         
@@ -965,21 +994,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
         o.setIdade(String.valueOf(idade));
         //o.imprime();
 
-        //clearing all boxes
-
-        txtCargo.setText("");
-        txtEnderecoBairro.setText("");
-        txtEnderecoCidade.setText("");
-        txtEnderecoEstado.setText("");
-        txtEnderecoNumero.setText("");
-        txtEnderecoRua.setText("");
-        txtOpAnoNasc.setText("");
-        txtOpCPF.setText("");
-        txtOpDiaNasc.setText("");
-        txtOpIdade.setText("");
-        txtOpMesNasc.setText("");
-        txtOpNome.setText("");
-        txtSalarioPorHora.setText("");
+        
 
 
         // Cadastrando os valores do Equipamento
@@ -1010,9 +1025,38 @@ public class CadastrarProduto extends javax.swing.JFrame {
         
         Manufatura m = new Manufatura(p);
         m.setQtde(Float.parseFloat(txtManufaturaHoras.getText()));
-        pd.adicionaManufatura(m);
+        listaManufatura.add(m);
+        //pd.adicionaManufatura(m);
         
-        pd.getManufaturas().get(pd.getManufaturas().size() - 1).imprime();
+        //clearing all boxes
+        txtManufaturaProcesso.setText("");
+        txtManufaturaHoras.setText("");
+        txtCargo.setText("");
+        txtEnderecoBairro.setText("");
+        txtEnderecoCidade.setText("");
+        txtEnderecoEstado.setText("");
+        txtEnderecoNumero.setText("");
+        txtEnderecoRua.setText("");
+        txtOpAnoNasc.setText("");
+        txtOpCPF.setText("");
+        txtOpDiaNasc.setText("");
+        txtOpIdade.setText("");
+        txtOpMesNasc.setText("");
+        txtOpNome.setText("");
+        txtSalarioPorHora.setText("");
+        txtNome1.setText("");
+        txtFabricante.setText("");
+        txtClienteAnoNasc1.setText("");
+        txtClienteDiaNasc1.setText("");
+        txtClienteMesNasc1.setText("");
+        txtManufaturaCusto.setText("");
+        txtManufaturaCustoTotal.setText("");
+        txtDepreciacao.setText("");
+        
+        lblManufaturaCadastroSucess.setText("Manufatura cadastrada!");
+        
+        
+        //pd.getManufaturas().get(pd.getManufaturas().size() - 1).imprime();
         
         //p.imprime();
     }//GEN-LAST:event_bttManufaturaCadastrarActionPerformed
@@ -1065,18 +1109,21 @@ public class CadastrarProduto extends javax.swing.JFrame {
 
     private void bttCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastrarProdutoActionPerformed
         // TODO add your handling code here:
-        System.out.println("---------------------------------------------------\n");
-       
-
-
+        String nome = txtNome.getText();
         
-        pd.setNome(txtNome.getText());
+        
+        //clearing all boxes
+        txtNome.setText("");
+        txtCustoDoProduto.setText("");
+        
+        Produto pd = new Produto(nome, listaIngrediente, listaManufatura);
+        pd.calculaCusto();
         this.listaProdutos.add(pd);
-        pd.imprime();
+        
+        //pd.imprime();
         new Cadastrar(this.listaPedidos,this.listaProdutos).setVisible(true);
         this.dispose();
         
-        System.out.println("---------------------------------------------------\n");
         //pd.setCusto(0);
         //pd.setIngredientes(new ArrayList<>());
         //pd.setManufaturas(new ArrayList<>());
@@ -1165,8 +1212,9 @@ public class CadastrarProduto extends javax.swing.JFrame {
 
     private void bttCadastrarProduto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastrarProduto1ActionPerformed
         // TODO add your handling code here:
-        pd.calculaCusto();
-        txtCustoDoProduto.setText(String.valueOf(pd.getCusto()));
+        Produto p = new Produto(listaManufatura, listaIngrediente);
+        p.calculaCusto();
+        txtCustoDoProduto.setText(String.valueOf(p.getCusto()));
         //pd.imprime();
     }//GEN-LAST:event_bttCadastrarProduto1ActionPerformed
 
@@ -1174,6 +1222,21 @@ public class CadastrarProduto extends javax.swing.JFrame {
         // TODO add your handling code here:
         lblIngredienteCadastroSucess.setText("");
     }//GEN-LAST:event_txtIngredienteNomeFocusGained
+
+    private void txtManufaturaProcessoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtManufaturaProcessoFocusGained
+        // TODO add your handling code here:
+        lblManufaturaCadastroSucess.setText("");
+    }//GEN-LAST:event_txtManufaturaProcessoFocusGained
+
+    private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
+        // TODO add your handling code here:
+        if (this.listaIngrediente == null){
+            this.listaIngrediente = new ArrayList<>();
+        }
+        if (this.listaManufatura == null){
+            this.listaManufatura = new ArrayList<>();
+        }
+    }//GEN-LAST:event_txtNomeFocusGained
 
     /**
      * @param args the command line arguments
@@ -1258,6 +1321,7 @@ public class CadastrarProduto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JLabel lblIngredienteCadastroSucess;
+    private javax.swing.JLabel lblManufaturaCadastroSucess;
     private javax.swing.JTextField txtCargo;
     private javax.swing.JTextField txtClienteAnoNasc1;
     private javax.swing.JTextField txtClienteDiaNasc1;

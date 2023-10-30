@@ -24,6 +24,12 @@ public class Controle extends javax.swing.JFrame {
         initComponents();
     }
     
+    public Controle (ArrayList<Pedido> lista){
+        this.lista = lista;
+        initComponents();
+        
+    }
+    
     public Controle(ArrayList<Pedido> lista, ArrayList<Produto> produto){
         this.lista = lista;
         this.produto = produto;
@@ -63,6 +69,11 @@ public class Controle extends javax.swing.JFrame {
         jButton2.setText("Consultar");
 
         jButton3.setText("Lista");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Sobre");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -135,8 +146,11 @@ public class Controle extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if(this.lista == null){
-            this.lista = new ArrayList<>();
-            this.produto = new ArrayList<>();
+            this.lista = new ArrayList<>(); 
+        }
+        
+        if(this.produto == null){
+            this.produto = new ArrayList<>();   
         }
         new Cadastrar(this.lista,this.produto).setVisible(true);
         this.dispose();
@@ -144,10 +158,15 @@ public class Controle extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        for (Pedido pedido : lista) {
-            pedido.imprime();
-        }
+        new Sobre().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        new Lista(this.lista).setVisible(true);
+        this.dispose();          
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
