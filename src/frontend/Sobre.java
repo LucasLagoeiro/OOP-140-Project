@@ -43,6 +43,7 @@ public class Sobre extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/kenji-projetos.png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 3, 15)); // NOI18N
         jLabel3.setText("Matheus Kenji");
 
         jLabel4.setFont(new java.awt.Font("Ubuntu", 3, 15)); // NOI18N
@@ -51,7 +52,8 @@ public class Sobre extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Ubuntu", 3, 15)); // NOI18N
         jLabel5.setText("11.120.316-2");
 
-        jLabel6.setText("RA");
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 3, 15)); // NOI18N
+        jLabel6.setText("11.121.088-6");
 
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 3, 18)); // NOI18N
         jLabel7.setText("Feito por:");
@@ -115,7 +117,7 @@ public class Sobre extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

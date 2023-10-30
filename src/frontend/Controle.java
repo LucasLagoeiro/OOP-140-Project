@@ -67,6 +67,11 @@ public class Controle extends javax.swing.JFrame {
         });
 
         jButton2.setText("Consultar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Lista");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -167,6 +172,12 @@ public class Controle extends javax.swing.JFrame {
         new Lista(this.lista).setVisible(true);
         this.dispose();          
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new Consultar(this.lista, this.produto).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
