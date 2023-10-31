@@ -26,18 +26,19 @@ import java.time.LocalDate;
  * @author robo
  */
 public class CadastrarProduto extends javax.swing.JFrame {
-    
+    //Instanciando todas as Arrays
     ArrayList<Ingrediente> listaIngrediente;
     ArrayList<Manufatura> listaManufatura;
     ArrayList<Pedido> listaPedidos;
     ArrayList<Produto> listaProdutos;
     
-   //Produto pd = new Produto(new ArrayList<>(),new ArrayList<>());
 
 
     /**
      * Creates new form CadastrarProduto
      */
+    
+    //Construtores que seram chamados pelas outras classes (interfaces) 
     public CadastrarProduto() {
         initComponents();
     }
@@ -696,24 +697,21 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDepreciacao, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtClienteDiaNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtClienteMesNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtClienteAnoNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDepreciacao, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtClienteDiaNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtClienteMesNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtClienteAnoNasc1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(54, 54, 54))
         );
         jPanel7Layout.setVerticalGroup(
@@ -739,6 +737,9 @@ public class CadastrarProduto extends javax.swing.JFrame {
                     .addComponent(jLabel30))
                 .addGap(96, 96, 96))
         );
+
+        lblManufaturaCadastroSucess.setBackground(new java.awt.Color(0, 153, 0));
+        lblManufaturaCadastroSucess.setForeground(new java.awt.Color(0, 153, 0));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -904,43 +905,37 @@ public class CadastrarProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void txtIngredienteNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngredienteNomeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtIngredienteNomeActionPerformed
 
     private void txtIngredienteUnidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngredienteUnidadeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtIngredienteUnidadeActionPerformed
 
     private void txtIngredientePrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngredientePrecoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtIngredientePrecoActionPerformed
 
     private void txtIngredienteFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngredienteFornecedorActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtIngredienteFornecedorActionPerformed
 
     private void txtIngredienteQuantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngredienteQuantActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtIngredienteQuantActionPerformed
 
     private void txtManufaturaProcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtManufaturaProcessoActionPerformed
-        // TODO add your handling code here:
         
     }//GEN-LAST:event_txtManufaturaProcessoActionPerformed
 
     private void bttVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVoltarActionPerformed
-        // TODO add your handling code here:
+        //Caso a pessoa clique no botão voltar
+        //Mudando de uma interface gráfica para outra (CadastrarProduto -> Cadastrar), passando as duas listas
         new Cadastrar(this.listaPedidos,this.listaProdutos).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_bttVoltarActionPerformed
 
     private void bttIngredCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttIngredCadActionPerformed
-        // TODO add your handling code here:
-        
+        //Caso a pessoa aperte o botão cadastrar (Ingrediente)
+        //Todos as txt boxes preenchidas, vão ser armazenadas no objeto i da classe Ingrediente
         Ingrediente i = new Ingrediente(
                         new MateriaPrima(
                                 txtIngredienteNome.getText(), 
@@ -950,10 +945,11 @@ public class CadastrarProduto extends javax.swing.JFrame {
                         ), 
                         Integer.parseInt(txtIngredienteQuant.getText())
                         );
-        listaIngrediente.add(i);
-        //pd.adicionaIngrediente(i);
         
-        //clearing all boxes
+        //Adicionando o objeto i na lista de Ingredientes
+        listaIngrediente.add(i);
+        
+        //limpando todas as txt boxes
         txtIngredienteCusto.setText("");
         txtIngredienteFornecedor.setText("");
         txtIngredienteNome.setText("");
@@ -961,18 +957,14 @@ public class CadastrarProduto extends javax.swing.JFrame {
         txtIngredienteQuant.setText("");
         txtIngredienteUnidade.setText("");
         
-        // Showing in frontend a register sucess msg
+        // Mostrando uma msg, caso o ingrediente fosse cadastrado
         lblIngredienteCadastroSucess.setText("Ingrediente cadastrado!");
-        //pd.getIngredientes().get(pd.getIngredientes().size() - 1).imprime();
-        
-        //p.imprime();
+
     }//GEN-LAST:event_bttIngredCadActionPerformed
 
     private void bttManufaturaCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttManufaturaCadastrarActionPerformed
-        // TODO add your handling code here:
-        
-        // Cadastrar valores do Operador
-        
+        //Caso a pessoa aperte o botão cadastrar (Manufatura)
+        //Cadastrando os valores do operador no objeto o da classe Operador
         Operador o = new Operador(txtOpNome.getText(),
             new Data(
                 Integer.parseInt(txtOpDiaNasc.getText()),
@@ -990,15 +982,8 @@ public class CadastrarProduto extends javax.swing.JFrame {
             txtCargo.getText(),
             Float.parseFloat(txtSalarioPorHora.getText())
         );
-        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
-        o.setIdade(String.valueOf(idade));
-        //o.imprime();
-
-        
-
-
-        // Cadastrando os valores do Equipamento
-        
+       
+        //Cadastrando os valores do Equipamento no objeto e da classe Equipamento
         Equipamento e = new Equipamento(txtNome1.getText(),
             txtFabricante.getText(),
             new Data(Integer.parseInt(txtClienteDiaNasc1.getText()),
@@ -1006,29 +991,22 @@ public class CadastrarProduto extends javax.swing.JFrame {
                 Integer.parseInt(txtClienteAnoNasc1.getText())),
             Float.parseFloat(txtDepreciacao.getText())
         );
-        //e.imprime();
 
-        //Verificação para caso as listas não estiverem inicializadas
-
-
-        //Adicionando os inputs do Equipamento na Array
-
-        //new CadastrarProduto(this.listaOp,this.listaEquip).setVisible(true);
-        
-        
-        //Instanciando os objetos
-        
+        //Passando os objetos com os cadastros salvos no objeto p da classe Processo
         Processo p = new Processo(o, e);
         
+        //Setando os valores preenchidos das txts boxes da manufatura no objeto p da classe Processo
         p.setNome(txtManufaturaProcesso.getText());
         p.setCustoHora(Float.parseFloat(txtManufaturaCusto.getText()));
         
+        //Passando o objeto p para no objeto m da classe Manufatura
         Manufatura m = new Manufatura(p);
         m.setQtde(Float.parseFloat(txtManufaturaHoras.getText()));
-        listaManufatura.add(m);
-        //pd.adicionaManufatura(m);
         
-        //clearing all boxes
+        //Adicionando o objeto m da classe Manufatura a lista de Manufaturas
+        listaManufatura.add(m);
+        
+        //Limpando todas as txt boxes
         txtManufaturaProcesso.setText("");
         txtManufaturaHoras.setText("");
         txtCargo.setText("");
@@ -1053,183 +1031,161 @@ public class CadastrarProduto extends javax.swing.JFrame {
         txtManufaturaCustoTotal.setText("");
         txtDepreciacao.setText("");
         
+        //Msg no frontend para informar a pessoa que a manufatura foi cadastrada
         lblManufaturaCadastroSucess.setText("Manufatura cadastrada!");
         
-        
-        //pd.getManufaturas().get(pd.getManufaturas().size() - 1).imprime();
-        
-        //p.imprime();
+
     }//GEN-LAST:event_bttManufaturaCadastrarActionPerformed
 
     private void txtCustoDoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustoDoProdutoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCustoDoProdutoActionPerformed
 
     private void bttCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCalcularActionPerformed
-          
-        //Instanciando os objetos
+        //Caso a pessoa aperte o botão calcular (Manufatura)  
+        //Instanciando os objetos das devidas classes Operador,Equipamento,Manufatura e Processo
         Operador o = new Operador();
         Equipamento e = new Equipamento();
         Manufatura m = new Manufatura();
         Processo p = new Processo(o, e);
-
-        //for (Operador operador : this.listaOp) {
-        //    operador.imprime();
-        //}
-        //for (Equipamento equipamento : this.listaEquip) {
-        //    equipamento.imprime();
-        //}
         
-        
-        //System.out.println(listaOp.size());
-        //System.out.println(listaEquip.size());
-        
+        // Setando os valores dos objetos, de acordo com os inputs da txt box
         m.setQtde(Float.parseFloat(txtManufaturaHoras.getText()));
-        
-        //Atualizando os valores
         o.setSalarioHora(Float.parseFloat(txtSalarioPorHora.getText()));
         e.setDepreciacaohora(Float.parseFloat(txtDepreciacao.getText()));
         
-        //System.out.println(o.getSalarioHora());
-        //System.out.println(e.getDepreciacaoHora());
-        
+        // Setando o valor de custo nas txt box, de acordo com os valores dos objetos
         txtManufaturaCusto.setText(String.valueOf(p.calculaCusto()));
+        
+        //Setando o valor de custo total de acordo com os valores nos inputs das txt boxes
         txtManufaturaCustoTotal.setText(String.valueOf((Float.parseFloat(txtManufaturaCusto.getText()))*(Float.parseFloat(txtManufaturaHoras.getText()))));
 
     }//GEN-LAST:event_bttCalcularActionPerformed
 
     private void bttCalcularFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_bttCalcularFocusLost
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_bttCalcularFocusLost
 
     private void txtIngredienteCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngredienteCalcActionPerformed
-        // TODO add your handling code here:
+        //Caso a pessoa aperte o botão calcular (Ingrediente)  
+        //Setando o valor da txt box de Custo de acordo com os inputs preenchidos pelo usuario
         txtIngredienteCusto.setText(String.valueOf((Float.parseFloat(txtIngredientePreco.getText()))*(Integer.parseInt(txtIngredienteQuant.getText()))));
     }//GEN-LAST:event_txtIngredienteCalcActionPerformed
 
     private void bttCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastrarProdutoActionPerformed
-        // TODO add your handling code here:
+        //Caso a pessoa aperte o botão cadastrar (Produto)  
+        
+        //Pegando a txt box preenchida pelo usuario e colocando em uma variavel
         String nome = txtNome.getText();
         
         
-        //clearing all boxes
+        //limpando todas as txt boxes
         txtNome.setText("");
         txtCustoDoProduto.setText("");
         
+        //Adicionando as duas listas no objeto pd da classe Produto, juntamente calculando o custo
         Produto pd = new Produto(nome, listaIngrediente, listaManufatura);
         pd.calculaCusto();
+        
+        //Adicionando o objeto pd da classe Produdo a lista de Produtos
         this.listaProdutos.add(pd);
         
-        //pd.imprime();
+        //Mudando de uma interface gráfica para a outra (CadastrarProduto -> Cadastrar), passando as duas listas
         new Cadastrar(this.listaPedidos,this.listaProdutos).setVisible(true);
         this.dispose();
         
-        //pd.setCusto(0);
-        //pd.setIngredientes(new ArrayList<>());
-        //pd.setManufaturas(new ArrayList<>());
-        //pd.setNome("");
-        
-        //pd.imprime();
     }//GEN-LAST:event_bttCadastrarProdutoActionPerformed
 
     private void txtManufaturaHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtManufaturaHorasActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtManufaturaHorasActionPerformed
 
     private void txtOpNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpNomeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtOpNomeActionPerformed
 
     private void txtOpDiaNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpDiaNascActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtOpDiaNascActionPerformed
 
     private void txtOpAnoNascFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtOpAnoNascFocusLost
-        // TODO add your handling code here:
+        //Logo após preencher a data de nascimento do Operador, mostrará a idade
         int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
         txtOpIdade.setText(String.valueOf(idade));
     }//GEN-LAST:event_txtOpAnoNascFocusLost
 
     private void txtOpAnoNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpAnoNascActionPerformed
-        // TODO add your handling code here:
-        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
-        txtOpIdade.setText(String.valueOf(idade));
+
     }//GEN-LAST:event_txtOpAnoNascActionPerformed
 
     private void txtOpIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpIdadeActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtOpIdadeActionPerformed
 
     private void txtOpCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpCPFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtOpCPFActionPerformed
 
     private void txtEnderecoEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoEstadoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtEnderecoEstadoActionPerformed
 
     private void txtEnderecoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoNumeroActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtEnderecoNumeroActionPerformed
 
     private void txtEnderecoCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoCidadeActionPerformed
-        // TODO add your handling code here:
+ 
     }//GEN-LAST:event_txtEnderecoCidadeActionPerformed
 
     private void txtEnderecoRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoRuaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtEnderecoRuaActionPerformed
 
     private void txtCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoActionPerformed
-        // TODO add your handling code here:
+
 
     }//GEN-LAST:event_txtCargoActionPerformed
 
     private void txtSalarioPorHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalarioPorHoraActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtSalarioPorHoraActionPerformed
 
     private void txtClienteDiaNasc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteDiaNasc1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteDiaNasc1ActionPerformed
 
     private void txtClienteAnoNasc1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteAnoNasc1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteAnoNasc1ActionPerformed
 
     private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
-        // TODO add your handling code here:
 
     }//GEN-LAST:event_txtNome1ActionPerformed
 
     private void txtDepreciacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDepreciacaoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtDepreciacaoActionPerformed
 
     private void txtFabricanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFabricanteActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtFabricanteActionPerformed
 
     private void bttCadastrarProduto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttCadastrarProduto1ActionPerformed
-        // TODO add your handling code here:
+        //Caso o usuario clique no calcular (produto)
+        //É passado a lista de manufatura e a lsita de ingredientes para o objeto p da classe Produto
         Produto p = new Produto(listaManufatura, listaIngrediente);
+        
+        //Chamando o objeto é possivel calcular o custo e logo depois é setado na box do CustoDoProduto
         p.calculaCusto();
         txtCustoDoProduto.setText(String.valueOf(p.getCusto()));
-        //pd.imprime();
     }//GEN-LAST:event_bttCadastrarProduto1ActionPerformed
 
     private void txtIngredienteNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIngredienteNomeFocusGained
-        // TODO add your handling code here:
+        //Tirando a msg de ingrediente cadastrado
         lblIngredienteCadastroSucess.setText("");
     }//GEN-LAST:event_txtIngredienteNomeFocusGained
 
     private void txtManufaturaProcessoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtManufaturaProcessoFocusGained
-        // TODO add your handling code here:
+        //Tirando a msg de manufatura cadastrada
         lblManufaturaCadastroSucess.setText("");
     }//GEN-LAST:event_txtManufaturaProcessoFocusGained
 
     private void txtNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNomeFocusGained
-        // TODO add your handling code here:
+        // Para caso as listas estiverem vazias
         if (this.listaIngrediente == null){
             this.listaIngrediente = new ArrayList<>();
         }

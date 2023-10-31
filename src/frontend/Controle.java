@@ -14,12 +14,15 @@ import backend.Produto;
  */
 public class Controle extends javax.swing.JFrame {
     
+    //Instanciando as Arrays utilizadas
     ArrayList<Pedido> lista;
     ArrayList<Produto> produto;
 
     /**
      * Creates new form Controle
      */
+    
+    //Construtores que seram chamados pelas outras classes (interfaces)
     public Controle() {
         initComponents();
     }
@@ -149,7 +152,8 @@ public class Controle extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+        // Se as listas estiverem vazias, atribuir uma nova lista
         if(this.lista == null){
             this.lista = new ArrayList<>(); 
         }
@@ -157,24 +161,47 @@ public class Controle extends javax.swing.JFrame {
         if(this.produto == null){
             this.produto = new ArrayList<>();   
         }
+        
+        //Mudando de uma interface gráfica para outra (Controle ->Cadastrar), passando as duas listas 
         new Cadastrar(this.lista,this.produto).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        if(this.lista == null){
+            this.lista = new ArrayList<>(); 
+        }
+        
+        if(this.produto == null){
+            this.produto = new ArrayList<>();   
+        }
+        //Mudando de uma interface gráfica para outra (Controle -> Sobre), passando as duas listas
         new Sobre(this.lista,this.produto).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        if(this.lista == null){
+            this.lista = new ArrayList<>(); 
+        }
+        
+        if(this.produto == null){
+            this.produto = new ArrayList<>();   
+        }
+        //Mudando de uma interface gráfica para a outra (Controle -> Lista), passando uma lista
         new Lista(this.lista).setVisible(true);
         this.dispose();          
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        if(this.lista == null){
+            this.lista = new ArrayList<>(); 
+        }
+        
+        if(this.produto == null){
+            this.produto = new ArrayList<>();   
+        }
+        //Mudando de uma interface gráfica para a outra (Controle -> Consultar), passando as duas listas
         new Consultar(this.lista, this.produto).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed

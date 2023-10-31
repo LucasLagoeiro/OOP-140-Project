@@ -20,11 +20,12 @@ import java.util.ArrayList;
  * @author uniellagoeiro
  */
 public class Cadastrar extends javax.swing.JFrame {
-    
+    //Iniciando as duas listas novamente
     ArrayList<Pedido> listaPedido;
     ArrayList<Produto> listaProdutos;
 
-
+    
+    //Construtores que seram chamados pelas outras classes (interfaces) 
     public Cadastrar() {
         initComponents();
     }
@@ -83,11 +84,17 @@ public class Cadastrar extends javax.swing.JFrame {
         buttonCadastrarPedido = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        lblCadastrarPedido = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Pedido");
         setResizable(false);
 
+        txtNumero.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNumeroFocusGained(evt);
+            }
+        });
         txtNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumeroActionPerformed(evt);
@@ -328,6 +335,14 @@ public class Cadastrar extends javax.swing.JFrame {
         jLabel19.setText("Endereço");
 
         buttonCadastrarPedido.setText("Cadastrar Pedido");
+        buttonCadastrarPedido.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                buttonCadastrarPedidoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                buttonCadastrarPedidoFocusLost(evt);
+            }
+        });
         buttonCadastrarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCadastrarPedidoActionPerformed(evt);
@@ -347,6 +362,8 @@ public class Cadastrar extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+
+        lblCadastrarPedido.setForeground(new java.awt.Color(0, 153, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -386,7 +403,11 @@ public class Cadastrar extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(buttonCadastrarPedido)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonCadastrarPedido)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblCadastrarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -423,7 +444,9 @@ public class Cadastrar extends javax.swing.JFrame {
                     .addComponent(buttonCadastrarPedido)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCadastrarPedido)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -431,32 +454,27 @@ public class Cadastrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
-        // TODO add your handling code here:
         
     }//GEN-LAST:event_txtNumeroActionPerformed
 
     private void txtClienteCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteCPFActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteCPFActionPerformed
 
     private void txtEnderecoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoNumeroActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoNumeroActionPerformed
 
     private void txtEnderecoEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoEstadoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoEstadoActionPerformed
 
     private void txtEnderecoCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoCidadeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoCidadeActionPerformed
 
     private void txtEnderecoRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoRuaActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoRuaActionPerformed
 
     private void buttonCadastrarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarPedidoActionPerformed
-        // TODO add your handling code here:
+        // Caso a pessoa aperte o botão cadastrar
+        // Todos os valores dos TxtBoxs, serão armazenados no objeto p da classe Pedido 
         Pedido p = new Pedido(
              Integer.parseInt(txtNumero.getText()),
                    new Pessoa(
@@ -480,12 +498,13 @@ public class Cadastrar extends javax.swing.JFrame {
                              Integer.parseInt(txtAnoPedido.getText())
                     ),
                     this.listaProdutos);
-        p.imprime();
+        //Setando o valor do pedido para mostrar no frontend, na box do Total Pedido
         txtTotalPedido.setText(String.valueOf(p.totalPedido()));
+        
+        //Adicionando o objeto p na lista de Pedidos
         this.listaPedido.add(p);
         
-        // clearing all boxes
-        
+        // limpando todas as txt boxes
         txtAnoPedido.setText("");
         txtClienteAnoNasc.setText("");
         txtClienteCPF.setText("");
@@ -502,54 +521,66 @@ public class Cadastrar extends javax.swing.JFrame {
         txtMesPedido.setText("");
         txtNumero.setText("");
         
+        //Informando o usuario que o pedido foi cadastrado
+        lblCadastrarPedido.setText("Pedido cadastrado");
+        
         
         
     }//GEN-LAST:event_buttonCadastrarPedidoActionPerformed
 
     private void txtAnoPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnoPedidoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtAnoPedidoActionPerformed
 
     private void txtClienteDiaNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteDiaNascActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteDiaNascActionPerformed
 
     private void txtClienteAnoNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteAnoNascActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteAnoNascActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //Caso a pessoa clique no botão voltar
+        //Mudando de uma interface gráfica para outra (Cadastro -> Controle), passando as duas listas
         new Controle(this.listaPedido,this.listaProdutos).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void txtClienteNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteNomeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteNomeActionPerformed
 
     private void txtDiaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiaPedidoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtDiaPedidoActionPerformed
 
     private void txtClienteIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtClienteIdadeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteIdadeActionPerformed
 
     private void txtClienteIdadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtClienteIdadeFocusLost
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtClienteIdadeFocusLost
 
     private void txtClienteAnoNascFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtClienteAnoNascFocusLost
-        // TODO add your handling code here:
+        // Quando o Txt Box do Cliente Ano de Nasc é preenchida, seguidamente é setado a idade através dessa lógica (Ano atual - Ano fornecido)
         int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtClienteAnoNasc.getText()));
         txtClienteIdade.setText(String.valueOf(idade));
     }//GEN-LAST:event_txtClienteAnoNascFocusLost
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        //Caso a pessoa clique no botão cadastrar produto
+        //Mudando de uma interface gráfica para outra (Cadastro -> CadastrarProduto), passando as duas listas
         new CadastrarProduto(this.listaPedido,this.listaProdutos).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void buttonCadastrarPedidoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_buttonCadastrarPedidoFocusGained
+        
+    }//GEN-LAST:event_buttonCadastrarPedidoFocusGained
+
+    private void txtNumeroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumeroFocusGained
+        //Sumindo com a msg de pedido cadastrado
+        lblCadastrarPedido.setText("");
+    }//GEN-LAST:event_txtNumeroFocusGained
+
+    private void buttonCadastrarPedidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_buttonCadastrarPedidoFocusLost
+        
+    }//GEN-LAST:event_buttonCadastrarPedidoFocusLost
 
     /**
      * @param args the command line arguments
@@ -610,6 +641,7 @@ public class Cadastrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblCadastrarPedido;
     private javax.swing.JTextField txtAnoPedido;
     private javax.swing.JTextField txtClienteAnoNasc;
     private javax.swing.JTextField txtClienteCPF;

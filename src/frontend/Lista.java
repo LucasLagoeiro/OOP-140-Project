@@ -12,11 +12,15 @@ import java.util.ArrayList;
  * @author robo
  */
 public class Lista extends javax.swing.JFrame {
+    
+    //Instanciando as arrays
     ArrayList<Pedido> lista;
 
     /**
      * Creates new form Lista
      */
+    
+    // Construtores que serão utilizados por outras classes (Interfaces)
     public Lista() {
         initComponents();
     }
@@ -93,17 +97,23 @@ public class Lista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bttMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttMostrarActionPerformed
-        // TODO add your handling code here:
+        //Caso o usuario clique no mostrar
+        //Será setado na txt box todos os pedidos já cadastrados
         String msg = "";
+        
+        // Looping para concatenar todos os pedidos da lista de Pedidos em uma unica variavel
         for(Pedido p : this.lista){
             msg += p;
         }
+        
+        //Setando a txt box com esta variavel
         txtListaT.setText(msg);
         
     }//GEN-LAST:event_bttMostrarActionPerformed
 
     private void bttVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttVoltarActionPerformed
-        // TODO add your handling code here:
+        //Caso o usuario clique no voltar
+        //Mudando de uma interface gráfica para a outra (Lista -> Controle), passando uma listas
         new Controle(this.lista).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_bttVoltarActionPerformed

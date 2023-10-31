@@ -17,6 +17,7 @@ import java.util.ArrayList;
  */
 public class Consultar extends javax.swing.JFrame {
     
+    //Instanciando as Arrays
     ArrayList<Pedido> listaPedido;
     ArrayList<Produto> listaProduto;
 
@@ -24,6 +25,8 @@ public class Consultar extends javax.swing.JFrame {
     /**
      * Creates new form Consultar
      */
+    
+    //Construtores que são utilizados por outras classes (outras Interfaces)
     public Consultar() {
         initComponents();
     }
@@ -419,6 +422,9 @@ public class Consultar extends javax.swing.JFrame {
         txtNomeProdutoxCusto.setRows(5);
         jScrollPane3.setViewportView(txtNomeProdutoxCusto);
 
+        lblConsultar.setBackground(new java.awt.Color(204, 0, 0));
+        lblConsultar.setForeground(new java.awt.Color(204, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -444,26 +450,26 @@ public class Consultar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDiaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMesPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAnoPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDiaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMesPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtAnoPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jButton2)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -495,10 +501,9 @@ public class Consultar extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(lblConsultar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(lblConsultar)
                     .addComponent(jButton2))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
@@ -508,71 +513,69 @@ public class Consultar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtDiaPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiaPedidoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtDiaPedidoActionPerformed
 
     private void txtAnoPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnoPedidoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtAnoPedidoActionPerformed
 
     private void txtOpNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpNomeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtOpNomeActionPerformed
 
     private void txtOpDiaNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpDiaNascActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtOpDiaNascActionPerformed
 
     private void txtOpAnoNascFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtOpAnoNascFocusLost
-        // TODO add your handling code here:
         
     }//GEN-LAST:event_txtOpAnoNascFocusLost
 
     private void txtOpAnoNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpAnoNascActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtOpAnoNascActionPerformed
 
     private void txtOpIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpIdadeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtOpIdadeActionPerformed
 
     private void txtOpCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpCPFActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtOpCPFActionPerformed
 
     private void txtEnderecoEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoEstadoActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoEstadoActionPerformed
 
     private void txtEnderecoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoNumeroActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoNumeroActionPerformed
 
     private void txtEnderecoCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoCidadeActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoCidadeActionPerformed
 
     private void txtEnderecoRuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoRuaActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtEnderecoRuaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // Caso o usuario aperte o botão de consultar
         
+        //Armazenando o input digitado pelo usuario na txt box do número
         String numero =txtNumero.getText();
+        
+        //Variavel que será utilizada, caso não tenha o número do pedido consultado
         String msg = "Pedido não encontrado";
         
+        //Limpandno a box do número
         txtNumero.setText("");
         
+        //Looping para verificar se tem o Pedido na lista de Pedidos
         for(Pedido p : this.listaPedido){
+            
+            //Caso o numero do pedido for igual o numero de algum objeto da classe Pedido na lista de Pedidos,
+            //Ele irá buscar as informações do pedido e setar as txt boxes conforme desejado
             if(String.valueOf(p.getNumero()).equals(numero)){
                 String listaProdutosText = "";
                 String listaIngredientesText = "";
                 String listaManufaturasText = "";
+                
+                //Pegando todos os produtos do pedido
                 for (Produto produto : p.getProdutos()) {
                     
                     
-                    
+                    //Pegando todos os ingredientes do pedido
                     for (Ingrediente ingrediente : produto.getIngredientes()) {
                         
                         listaIngredientesText += "Ingrediente: " + ingrediente.getMateriaPrima().getNome() +
@@ -583,8 +586,8 @@ public class Consultar extends javax.swing.JFrame {
                     
                     }
 
-                    // Crie uma representação de texto para a lista de manufaturas do produto atual
-                   
+
+                    //Pegando todas as manufaturas do pedido
                     for (Manufatura manufatura : produto.getManufaturas()) {
                         
                         listaManufaturasText +=  "Processo: " + manufatura.getProcesso().getNome() + 
@@ -599,6 +602,7 @@ public class Consultar extends javax.swing.JFrame {
                 }
 
                 
+                //Setando todas as txt boxes, conforme o número do Pedido
                 txtAnoPedido.setText(String.valueOf(p.getData().getAno()));
                 txtMesPedido.setText(String.valueOf(p.getData().getMes()));
                 txtDiaPedido.setText(String.valueOf(p.getData().getDia()));
@@ -617,16 +621,8 @@ public class Consultar extends javax.swing.JFrame {
                 txtIngred.setText(listaIngredientesText);
                 txtProcess.setText(listaManufaturasText);
                 
+                //Caso o pedido seja achado, a variavel msg será vazio, ou seja, não mostrará no frontend a msg de erro
                 msg = "";
-                
-                //for(Produto pd : this.listaProduto){
-                //    msg += p;
-                //}
-                
-                //txtIngred.setText();
-                
-
-                //msg = "Cadastro removido com sucesso";
                 break;
             }
             
@@ -634,34 +630,53 @@ public class Consultar extends javax.swing.JFrame {
             
         }
         
+        //Mostrando a msg, caso não tenha o número - mostrará uma msg de erro, caso tenha - não mostrará nada
         lblConsultar.setText(msg);
+        
+        //Setando a idade do Cliente conforme o Produto
         int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
         txtOpIdade.setText(String.valueOf(idade));
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        //Caso o usuario clique no botao voltar
+        //Mudando de uma interface gráfica para a outra (Consultar -> Cadastro), passando as duas listas
         new Controle(listaPedido, listaProduto).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtNumeroFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumeroFocusLost
-        // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_txtNumeroFocusLost
 
     private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeroActionPerformed
 
     private void txtNumeroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumeroFocusGained
-        // TODO add your handling code here:
+        // Sumindo a msg de erro, quando for procurar outro número
         lblConsultar.setText("");
+        txtAnoPedido.setText("");
+        txtMesPedido.setText("");
+        txtDiaPedido.setText("");
+        txtTotalPedido.setText("");
+        txtEnderecoBairro.setText("");
+        txtEnderecoCidade.setText("");
+        txtEnderecoEstado.setText("");
+        txtEnderecoNumero.setText("");
+        txtEnderecoRua.setText("");
+        txtOpAnoNasc.setText("");
+        txtOpCPF.setText("");
+        txtOpDiaNasc.setText("");
+        txtOpMesNasc.setText("");
+        txtOpNome.setText("");
+        txtNomeProdutoxCusto.setText("");
+        txtIngred.setText("");
+        txtProcess.setText("");
+        txtOpIdade.setText("");
     }//GEN-LAST:event_txtNumeroFocusGained
 
     private void jButton1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton1FocusLost
-        // TODO add your handling code here:
 
     }//GEN-LAST:event_jButton1FocusLost
 
@@ -723,8 +738,6 @@ public class Consultar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
