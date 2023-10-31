@@ -107,4 +107,11 @@ public float calculaCusto() {
             manufatura.imprime();
         }
     }
+
+    @Override
+    public String toString() {
+        return "Produto: " + nome + "Custo: " + calculaCusto() + "\n"; 
+    }
+    
+    
 }

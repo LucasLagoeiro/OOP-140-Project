@@ -4,17 +4,32 @@
  */
 package frontend;
 
+import backend.Pedido;
+import backend.Produto;
+import java.util.ArrayList;
+
 /**
  *
  * @author robo
  */
 public class Sobre extends javax.swing.JFrame {
-
+    
+    ArrayList<Pedido> lista;
+    ArrayList<Produto> produto;   
+    
     /**
      * Creates new form Sobre
      */
+    
     public Sobre() {
         initComponents();
+    }
+    
+    public Sobre (ArrayList<Pedido> lista, ArrayList<Produto> produto){
+        this.lista = lista;
+        this.produto = produto;
+        initComponents();
+        
     }
 
     /**
@@ -137,7 +152,7 @@ public class Sobre extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        new Controle().setVisible(true);
+        new Controle(this.lista, this.produto).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

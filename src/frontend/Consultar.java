@@ -4,6 +4,8 @@
  */
 package frontend;
 
+import backend.Ingrediente;
+import backend.Manufatura;
 import backend.Pedido;
 import backend.Produto;
 import java.time.LocalDate;
@@ -93,8 +95,16 @@ public class Consultar extends javax.swing.JFrame {
         jLabel1.setText("Número:");
 
         txtNumero.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNumeroFocusGained(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtNumeroFocusLost(evt);
+            }
+        });
+        txtNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroActionPerformed(evt);
             }
         });
 
@@ -376,6 +386,11 @@ public class Consultar extends javax.swing.JFrame {
         );
 
         jButton1.setText("Consultar");
+        jButton1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jButton1FocusLost(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -510,14 +525,11 @@ public class Consultar extends javax.swing.JFrame {
 
     private void txtOpAnoNascFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtOpAnoNascFocusLost
         // TODO add your handling code here:
-        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
-        txtOpIdade.setText(String.valueOf(idade));
+        
     }//GEN-LAST:event_txtOpAnoNascFocusLost
 
     private void txtOpAnoNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpAnoNascActionPerformed
         // TODO add your handling code here:
-        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
-        txtOpIdade.setText(String.valueOf(idade));
     }//GEN-LAST:event_txtOpAnoNascActionPerformed
 
     private void txtOpIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOpIdadeActionPerformed
@@ -554,6 +566,38 @@ public class Consultar extends javax.swing.JFrame {
         
         for(Pedido p : this.listaPedido){
             if(String.valueOf(p.getNumero()).equals(numero)){
+                String listaProdutosText = "";
+                String listaIngredientesText = "";
+                String listaManufaturasText = "";
+                for (Produto produto : p.getProdutos()) {
+                    
+                    
+                    
+                    for (Ingrediente ingrediente : produto.getIngredientes()) {
+                        
+                        listaIngredientesText += "Ingrediente: " + ingrediente.getMateriaPrima().getNome() +
+                                                     " Unidade: "+ ingrediente.getMateriaPrima().getUnidade() +
+                                                  " Fornecedor: " + ingrediente.getMateriaPrima().getFornecedor() + 
+                                                       " Preço: " + ingrediente.getMateriaPrima().getPreco() +
+                                                  " Quantidade: " + ingrediente.getQtde() + "\n";
+                    
+                    }
+
+                    // Crie uma representação de texto para a lista de manufaturas do produto atual
+                   
+                    for (Manufatura manufatura : produto.getManufaturas()) {
+                        
+                        listaManufaturasText +=  "Processo: " + manufatura.getProcesso().getNome() + 
+                                                  " Custo/H: " + manufatura.getProcesso().getCustoHora() + 
+                                                 " Operador: "+ manufatura.getProcesso().getOperador().getNome() + 
+                                              " Equipamento:" + manufatura.getProcesso().getEquipamento().getNome() +  "\n";
+                    
+                    }
+                    listaProdutosText += "Nome do produto: " + produto.getNome() + 
+                                                   " Custo: " + produto.getCusto() + "\n";
+                
+                }
+
                 
                 txtAnoPedido.setText(String.valueOf(p.getData().getAno()));
                 txtMesPedido.setText(String.valueOf(p.getData().getMes()));
@@ -569,16 +613,30 @@ public class Consultar extends javax.swing.JFrame {
                 txtOpDiaNasc.setText(String.valueOf(p.getCliente().getDataNasc().getDia()));
                 txtOpMesNasc.setText(String.valueOf(p.getCliente().getDataNasc().getMes()));
                 txtOpNome.setText(p.getCliente().getNome());
-                txtNomeProdutoxCusto.setText(p);
-                txtNomeProdutoxCusto.setText(msg);
+                txtNomeProdutoxCusto.setText(listaProdutosText);
+                txtIngred.setText(listaIngredientesText);
+                txtProcess.setText(listaManufaturasText);
+                
+                msg = "";
+                
+                //for(Produto pd : this.listaProduto){
+                //    msg += p;
+                //}
+                
+                //txtIngred.setText();
+                
 
                 //msg = "Cadastro removido com sucesso";
                 break;
             }
-            else{
-                lblConsultar.setText(msg);
-            }
+            
+            
+            
         }
+        
+        lblConsultar.setText(msg);
+        int idade = (LocalDate.now().getYear())- (Integer.parseInt(txtOpAnoNasc.getText()));
+        txtOpIdade.setText(String.valueOf(idade));
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -592,6 +650,20 @@ public class Consultar extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_txtNumeroFocusLost
+
+    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroActionPerformed
+
+    private void txtNumeroFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNumeroFocusGained
+        // TODO add your handling code here:
+        lblConsultar.setText("");
+    }//GEN-LAST:event_txtNumeroFocusGained
+
+    private void jButton1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton1FocusLost
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButton1FocusLost
 
     /**
      * @param args the command line arguments
