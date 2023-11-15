@@ -16,6 +16,7 @@ import backend.Pedido;
 import backend.Pessoa;
 import java.util.ArrayList;
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 
 
@@ -1090,8 +1091,10 @@ public class CadastrarProduto extends javax.swing.JFrame {
         //Adicionando o objeto pd da classe Produdo a lista de Produtos
         this.listaProdutos.add(pd);
         
+        JOptionPane.showMessageDialog(null, "Produto cadastrado!");
+        
         //Mudando de uma interface gráfica para a outra (CadastrarProduto -> Cadastrar), passando as duas listas
-        new Cadastrar(this.listaPedidos,this.listaProdutos).setVisible(true);
+        new CadastrarProduto(this.listaPedidos,this.listaProdutos).setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_bttCadastrarProdutoActionPerformed

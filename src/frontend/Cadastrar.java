@@ -21,7 +21,7 @@ import java.util.ArrayList;
  */
 public class Cadastrar extends javax.swing.JFrame {
     //Iniciando as duas listas novamente
-    ArrayList<Pedido> listaPedido;
+    ArrayList<Pedido> listaPedido; 
     ArrayList<Produto> listaProdutos;
 
     
