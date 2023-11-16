@@ -47,6 +47,7 @@ public class Lista extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lista de pedidos");
 
+        txtListaT.setEditable(false);
         txtListaT.setColumns(20);
         txtListaT.setRows(5);
         jScrollPane1.setViewportView(txtListaT);
